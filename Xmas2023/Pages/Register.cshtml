@@ -1,0 +1,110 @@
+﻿@page
+@model RegisterModel
+@{
+}
+
+@if (string.IsNullOrEmpty(Model.Wish))
+{
+    <div class="card">
+        <div class="card-header">
+            <div>
+                <h3 class="text-light">2023年</h3>
+                <h3 class="text-light">聖誕節交換禮物報名表</h3>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <form method="post">
+                <div class="mb-3">
+                    Hi @(User.FindFirst("name")?.Value)，歡迎成為聖誕小天使的一員：
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Department" class="form-label">部門別</label>
+                    <select asp-for="Department" class="form-select">
+                        <option selected disabled></option>
+                        <option value="@Enums.Department.公司">公司</option>
+                        <optgroup label="銀行事業處">
+                            <option value="@Enums.Department.銀行事業處">銀行事業處（全）</option>
+                            <option value="@Enums.Department.數位支付部">數位支付部</option>
+                            <option value="@Enums.Department.海外金融部">海外金融部</option>
+                            <option value="@Enums.Department.網路事業部">網路事業部</option>
+                            <option value="@Enums.Department.應用發展部">應用發展部</option>
+                            <option value="@Enums.Department.金融行銷部">金融行銷部</option>
+                        </optgroup>
+                        <optgroup label="企業事業處">
+                            <option value="@Enums.Department.企業事業處">企業事業處（全）</option>
+                            <option value="@Enums.Department.電子商務部">電子商務部</option>
+                            <option value="@Enums.Department.物流事業部">物流事業部</option>
+                            <option value="@Enums.Department.流通事業部">流通事業部</option>
+                            <option value="@Enums.Department.保險科技部">保險科技部</option>
+                            <option value="@Enums.Department.數據加值部">數據加值部</option>
+                            <option value="@Enums.Department.事業推展部">事業推展部</option>
+                        </optgroup>
+                        <optgroup label="系統整合處">
+                            <option value="@Enums.Department.系統整合處">系統整合處（全）</option>
+                            <option value="@Enums.Department.業務一部">業務一部</option>
+                            <option value="@Enums.Department.技術支援部">技術支援部</option>
+                        </optgroup>
+                        <optgroup label="行政管理處">
+                            <option value="@Enums.Department.行政管理處">行政管理處</option>
+                        </optgroup>
+                        <optgroup label="技術研發處">
+                            <option value="@Enums.Department.技術研發處">技術研發處</option>
+                        </optgroup>
+                    </select>
+                    <div class="text-danger">
+                        <span asp-validation-for="Department"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Wish" class="form-label">
+                        請說出您的禮物願望~~
+                        <br/>
+                        <small class="text-secondary">參加同仁可提出禮物願望/條件，可參考範例: 我想要的禮物是大地色帥氣風格的手機周邊~</small>
+                    </label>
+                    <textarea asp-for="Wish" class="form-control" rows="6"></textarea>
+                    <div class="text-danger">
+                        <span asp-validation-for="Wish"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                </div>
+
+                <div class="mb-3">
+                    <input type="submit" value="立即報名" class="btn btn-danger w-100" />
+                </div>
+            </form>
+        </div>
+    </div>
+}
+else
+{
+    <div class="card">
+        <div class="card-body">
+            <div class="mb-5">
+            <h5 class="text-center text-danger">2023聖誕交換禮物</h5>
+            <h1 class="text-center text-danger">報名完成</h1>
+            </div>
+
+            <p>您許下的願望是：</p>
+
+            <div class="wish mb-3">
+                @Model.Wish
+            </div>
+
+            <p>您的願望將被神秘天使實現，敬請期待！</p>
+            <p>也感謝您參與本次活動，成為同仁們溫暖的聖誕小天使 ❤</p>
+            <p>我們預計於11/10(五)邀請您抽小主人的禮物，屆時將發信通知，謝謝。</p>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

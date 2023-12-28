@@ -1,0 +1,65 @@
+@page
+@model ManagementModel
+@{
+
+}
+
+<table class="table table-light ">
+    <thead>
+        <tr class="table-dark">
+            <th>
+                @Html.DisplayNameFor(model => model.DataItems[0].Uid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataItems[0].Department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataItems[0].UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataItems[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataItems[0].Wish)
+            </th>
+            <th>
+                配對結果
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.DataItems)
+        {
+            <tr class="@(item.MatchedId.HasValue ? "table-warning" : "")">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Uid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Wish)
+                </td>
+                <td>
+                    @item.MatchItem?.Uid
+                </td>
+                <td>
+                    <form method="post">
+                        <button type="submit" class="btn btn-danger" asp-route-id="@item.Id">刪除</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form method="post" asp-page-handler="DrawStrawsAll">
+    <button type="submit" class="btn btn-danger mt-3">配對未配對人員</button>
+</form>

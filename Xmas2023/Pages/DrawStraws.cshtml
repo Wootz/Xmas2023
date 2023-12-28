@@ -1,0 +1,37 @@
+﻿@page
+@model DrawStrawsModel
+@{
+}
+
+@if (Model.Uid == null)
+{
+    <form method="post">
+        <button type="submit" class="btn btn-danger btn-lg" style="padding: 40px 70px;">
+            送禮任務
+            <h1 class="ms-2" style="display: inline;">抽!!!!</h1>
+        </button>
+    </form>
+}
+else
+{
+    <div class="d-flex flex-column  justify-content-end">
+        <h1 class="text-light text-end">@Model.Uid</h1>
+        <div class="card">
+            <div class="card-body">
+                <p>親愛的小天使，您抽中的送禮任務是：</p>
+
+                <div class="wish mb-3">
+                    @Model.Wish
+                </div>
+
+                <p>了解任務後，就可以著手購買禮物囉！</p>
+                <ol>
+                    <li>繳交期間：2023/12/15(五) ~ 2023/12/20(三)中午截止，請將禮物繳交給各處部窗口。</li>
+                    <li>禮物不得為效期小於6個月之食品、二手品、損壞品、活體。</li>
+                    <li>禮物需自行包裝，且外包裝請貼上購買發票/憑證(可影本)，發票/憑證之購買日期需在 2023/10/01 之後，且金額在 NT$ 400(含)以上。</li>
+                </ol>
+                <p>千萬不要忘了您的任務，不然許願者會QQ喔。</p>
+            </div>
+        </div>    
+    </div>
+}

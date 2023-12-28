@@ -1,0 +1,94 @@
+html {
+  font-size: 14px;
+  font-family: Noto Sands TC;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background-color: #cad4ca;
+  background-image: url("/images/bg.png");
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: bottom 0 left 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  overflow: auto;
+}
+
+.card {
+  max-width: 635px;
+  width: 90%;
+}
+
+.card::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: no-repeat center/100% url("/images/logo.png");
+  position: absolute;
+  top: -100px;
+  left: 30px;
+}
+
+.card .card-header,
+.card .card-body {
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.card .card-body {
+  padding-top: 38px;
+}
+
+.card .card-header {
+  height: 158px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(97deg, #027a71 -1.41%, #f57c56 100.8%);
+  position: relative;
+}
+
+.card .card-header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 120%;
+  background: no-repeat right/100% url("/images/banner.png");
+  background-size: auto 100%;
+}
+
+.wish {
+  background: #fae8e8;
+  border-radius: 6px;
+  padding: 1em;
+  min-height: 8em;
+}

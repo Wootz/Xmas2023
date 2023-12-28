@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xmas2023", "Xmas2023\Xmas2023.csproj", "{C1C1CBB5-97DD-4177-A520-6CFB5BEBD19A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xms2023.Test", "Xms2023.Test\Xms2023.Test.csproj", "{6A6AD642-04FF-4DD8-A122-6F3B6BC7C061}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1C1CBB5-97DD-4177-A520-6CFB5BEBD19A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1C1CBB5-97DD-4177-A520-6CFB5BEBD19A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1C1CBB5-97DD-4177-A520-6CFB5BEBD19A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1C1CBB5-97DD-4177-A520-6CFB5BEBD19A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A6AD642-04FF-4DD8-A122-6F3B6BC7C061}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A6AD642-04FF-4DD8-A122-6F3B6BC7C061}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A6AD642-04FF-4DD8-A122-6F3B6BC7C061}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A6AD642-04FF-4DD8-A122-6F3B6BC7C061}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {69E77387-9667-47F9-8AAD-0CEA8B05E158}
+	EndGlobalSection
+EndGlobal

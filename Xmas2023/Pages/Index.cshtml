@@ -1,0 +1,14 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="mb-5">
+    <h6>報名時間 <span class="text-danger">2023/11/1(三)00:00:00 ~ 2023/11/09(四)23:59:59</span></h6>
+</div>
+
+<a class="btn btn-danger btn-lg" style="padding: 40px 70px;" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignIn">
+    <h1 class="ms-2">登入</h1>
+    (使用公司 Office 365 繼續)
+</a>
